@@ -1,0 +1,187 @@
+﻿#summary Plot Cursor Location And Zoom Chart
+<font face="Segoe UI, Verdana, Tahoma, Arial, sans-serif">
+=== Introduction/Catalog ===
+ Please *download the sample code* at the section JQueryElement Demo Download of [Download Downloads], the directory is /plot/Default.aspx.
+ 
+ Video demo: [http://www.tudou.com/programs/view/9XXZDJUs7wo/ www.tudou.com/programs/view/9XXZDJUs7wo/]
+
+ This article will explain in detail how to set the cursor of Plot chart, the catalog is as follows:
+
+  * Prepare
+  * Required Scripts
+  * Cursor
+    * Location And Style
+    * Following The Mouse
+    * Display Vertical And Horizontal Lines
+  * Zoom
+    * Constraint
+    * Restore Original
+
+=== Prepare ===
+ Please view the Prepare section at [JQueryElementPlotDoc Plot Reference].
+
+=== Required Scripts ===
+ You need add the script that required by cursor, such as:
+{{{
+<script type="text/javascript"
+	src="js/plugins/jqplot.cursor.min.js">
+</script>
+}}}
+ If you use the ResourceLoader to load scripts, you need to configure the web.config and set the JQPlotCursor property of ResourceLoader to true, for example:
+{{{
+<appSettings>
+	...
+
+	<add key="je.jqplot.Cursor.js"
+		value="~/js/plugins/jqplot.cursor.min.js"/>
+</appSettings>
+}}}
+
+{{{
+<je:ResourceLoader ID="resource" runat="server"
+	JQPlotCursor="true" />
+}}}
+ More about the ResourceLoader, you can refer to [ResourceLoader Automatically Add Scripts And Styles].
+
+=== Cursor ===
+ Only Show property of CursorSetting needs to be set to true, you can display cursor in the chart:
+{{{
+<je:Plot ID="plot1" runat="server" IsVariable="true"
+	Data="[[['2012-1-31',1],['2012-2-1',2],['2012-2-2',4],['2012-2-3',8]]]">
+
+	<CursorSetting Show="true" />
+
+	<AxesSetting>
+		<XAxisSetting
+			Renderer="DateAxisRenderer"
+			TickRendererSetting-FormatString="%Y-%#m-%#d">
+		</XAxisSetting>
+	</AxesSetting>
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/plotcursor1.jpg" />
+
+ ==== <font color="green">Location And Style</font> ====
+ By the ToolTipLocation and ToolTipOffset properties of CursorSetting, you can control the location of tip, Style property indicates that cursor style:
+{{{
+<je:Plot ID="plot2" runat="server" IsVariable="true"
+	Data="[[[1,1],[2,2],[2,4],[3,8]]]">
+	<CursorSetting
+		Show="true"
+		ToolTipLocation="ne"
+		ToolTipOffset="20"
+		Style="pointer" />
+</je:Plot>
+}}}
+ The value of Style is the CSS style cursor.
+
+ <img src="http://zsharedcode.googlecode.com/files/plotcursor2.jpg" />
+
+ ==== <font color="green">Following The Mouse</font> ====
+ Set the FollowMouse property to true, the location information will follow the mouse movement:
+{{{
+<je:Plot ID="plot3" runat="server" IsVariable="true"
+	Data="[[[1,1],[2,2],[2,4],[3,8]]]">
+	<CursorSetting
+		Show="true"
+		FollowMouse="true" />
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/plotcursor3.jpg" />
+
+ ==== <font color="green">Display Vertical And Horizontal Lines</font> ====
+ Set ShowHorizontalLine, ShowVerticalLine property to true, then there will be horizontal and vertical lines are displayed:
+{{{
+<je:Plot ID="plot4" runat="server" IsVariable="true"
+	Data="[[[4,2],[2,5],[3,2],[2,8]]]">
+	<CursorSetting Show="true"
+		ShowHorizontalLine="true"
+		ShowVerticalLine="true" />
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/plotcursor4.jpg" />
+
+=== Zoom ===
+ Only need to set the Zoom property to true, you can complete function for zooming:
+{{{
+<je:Plot ID="plot5" runat="server" IsVariable="true">
+	
+	<CursorSetting Show="true" Zoom="true" />
+
+	<AxesSetting>
+		<XAxisSetting TickRendererSetting-FormatString="%d">
+		</XAxisSetting>
+	</AxesSetting>
+</je:Plot>
+}}}
+ Use the mouse to select a region, the region will be enlarged.
+
+ <img src="http://zsharedcode.googlecode.com/files/plotcursor5.jpg" />
+
+ <img src="http://zsharedcode.googlecode.com/files/plotcursor51.jpg" />
+
+ In addition, the data in the example above is added by the following code:
+{{{
+// ...
+
+using zoyobar.shared.panzer.web.jqueryui.plusin.jqplot;
+
+public partial class plot_Cursor1 : System.Web.UI.Page
+{
+
+	protected void Page_Load ( object sender, EventArgs e )
+	{
+		Data data = new Data ( );
+
+		for ( int x = 1; x <= 12; x++ )
+			data.AppendPoint ( new Point ( x, x * x ) );
+
+		this.plot5.AppendData ( data );
+	}
+
+}
+}}}
+
+ ==== <font color="green">Constraint</font> ====
+ Set the ConstrainZoomTo property to x, you can only zoom along the x axis:
+{{{
+<je:Plot ID="plot6" runat="server" IsVariable="true"
+	Data="[[['2012-1-1',1],['2012-1-2',4],['2012-1-3',9]]]">
+
+	<CursorSetting
+		Show="true"
+		Zoom="true"
+		ConstrainZoomTo="x" />
+	
+	<AxesSetting>
+		<XAxisSetting Renderer="DateAxisRenderer">
+		</XAxisSetting>
+	</AxesSetting>
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/plotcursor6.jpg" />
+
+ ==== <font color="green">Restore Original</font> ====
+ By default, double-click the chart to restore the original, but you can set ClickReset property to true, so single-click can restore the original image: 
+{{{
+<je:Plot ID="plot7" runat="server" IsVariable="true"
+	Data="[[[1,2],[3,4],[5,6]]]">
+	<CursorSetting
+		Show="true"
+		Zoom="true"
+		ClickReset="true" />
+</je:Plot>
+}}}
+
+=== Related Content ===
+ [JQueryElementPlotDoc Plot Reference]
+
+ [JEBase JQueryElement Basic Property Reference]
+
+ [ResourceLoader Automatically Add Scripts And Styles]
+
+</font>

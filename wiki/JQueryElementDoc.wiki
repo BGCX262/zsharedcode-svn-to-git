@@ -1,0 +1,61 @@
+﻿#summary JQueryElement 说明&参考
+#labels Phase-Implementation
+<font face="microsoft yahei">
+<font size="1">[http://www.microsofttranslator.com/bv.aspx?from=&to=en&a=http://code.google.com/p/zsharedcode/wiki/JQueryElementDoc Translate this page]</font>
+
+=== 简介 ===
+ [JQueryElement JQueryElement] 是可以在 Visual Studio 中使用的 jQuery UI 控件, 实现了 jQuery UI 的各种效果以及插件.
+
+=== 使用 ===
+ 请在 [Download 下载资源] 中的 JQueryElement.dll 下载一节下载 JQueryElement dll 文件的 zip 压缩包.
+
+=== 示例 ===
+ * [JQueryElementRepeaterDoc Repeater 完全参考]
+   * [JERepeaterBindField Repeater 绑定/处理字段]
+   * [JERepeaterSubView Repeater 子视图]
+   * [JERepeaterGroup Repeater 数据分组]
+   * [JERepeaterWidget Repeater 处理控件]
+   * [JERepeaterShowTip Repeater 消息提示]
+   * [JERepeaterSearch Repeater 检索数据]
+   * [JERepeaterSorting Repeater 排序]
+   * [JERepeaterMulti Repeater 多行操作]
+ * [JQueryElementTimerDoc Timer 完全参考]
+ * [JQueryElementValidatorDoc Validator 完全参考]
+ * [JQueryElementUploaderDoc Uploader 完全参考]
+
+ * [JQueryElementPlotDoc Plot 完全参考]
+   * [JEPlotAxisGrid Plot 轴和网格]
+   * [JEPlotDateAxis Plot 日期轴]
+   * [JEPlotTitleLegendSeries Plot 标题图例和序列]
+   * [JEPlotCursor Plot 光标位置和放大图表]
+   * [JEPlotHighlighter Plot 高亮显示数据]
+
+ * [JQueryElementAccordionDoc 折叠列表示例]
+ * [JQueryElementAutoCompleteDoc Autocompelete 完全参考]
+ * [JQueryElementButtonDoc 按钮示例]
+ * [JQueryElementDatePickerDoc 日期框示例]
+ * [JQueryElementDialogDoc 对话框示例]
+ * [JQueryElementProgressBarDoc Progressbar 完全参考]
+ * [JQueryElementSliderDoc 分割条示例]
+ * [JQueryElementTabsDoc 分组标签示例]
+
+ * [JQueryElementDraggableDoc 拖动效果示例]
+ * [JQueryElementDroppableDoc 拖放效果示例]
+ * [JQueryElementResizableDoc 缩放效果示例]
+ * [JQueryElementSelectableDoc 选中效果示例]
+ * [JQueryElementSortableDoc 排列效果示例]
+
+=== 其它 ===
+ * [AjaxReturnJSON 在不同的 .NET 版本中返回 JSON]
+ * [AjaxDataType Ajax 与服务器的数据类型转换]
+ * [JEBase JQueryElement 基本属性参考]
+ * [JEParameter 通过 Parameter 对象添加 Ajax 请求时的参数]
+ * [AjaxManager 生成调用服务器端方法的 javascript 函数]
+ * [JEMasterPage 在母版页中使用 JQueryElement]
+ * [ResponseProgress 显示页面加载进度]
+ * [ResourceLoader 自动添加脚本和样式]
+ * [JEIntelliSense 配置 Visual Studio 的 JQueryElement 智能提示]
+
+=== 相关内容 ===
+ * [HowToDownloadAndUse 如何下载使用]
+</font>

@@ -1,0 +1,112 @@
+﻿#summary Repeater 排序
+<font face="microsoft yahei">
+<font size="1">[http://www.microsofttranslator.com/bv.aspx?from=&to=en&a=http://code.google.com/p/zsharedcode/wiki/JERepeaterSorting Translate this page]</font>
+
+=== 简介/目录 ===
+ 请到 [Download 下载资源] 的 JQueryElement 示例下载一节*下载示例代码*, 目录 /repeater/Default.aspx.
+
+ 视频演示: [http://www.tudou.com/programs/view/M6aS81RVlCw/ www.tudou.com/programs/view/M6aS81RVlCw/]
+
+ 本文将详细的讲解如何在 Repeater 中根据字段对数据排序, 目录如下:
+
+  * 准备
+  * 调用 togglesort 函数
+  * 对多个字段排序
+  * 在服务器端排序
+  * 显示排序状态
+
+<img src="http://zsharedcode.googlecode.com/files/personlist1.jpg" />
+
+=== 准备 ===
+ 请先查看 [JQueryElementRepeaterDoc Repeater 完全参考] 或者准备一节的内容.
+
+=== 调用 togglesort 函数 ===
+ 一般情况下, 会通过点击表头的字段标题来完成排序, 因此可以在 HeaderTemplate 中调用 togglesort 函数:
+{{{
+<je:Repeater ID="personList" runat="server"	...	>
+	<HeaderTemplate>
+		<thead je-class="{header}">
+			<tr>
+				<td je-onclick="togglesort,'realname'">
+					姓名
+				</td>
+				<td je-onclick="togglesort,'age'">
+					年龄
+				</td>
+				<td je-onclick="togglesort,'birthday'">
+					出生日期
+				</td>
+			</tr>
+		</thead>
+	</HeaderTemplate>
+</je:Repeater>
+}}}
+ 在示例中, 通过 je-onclick 来设置在 td 被点击时调用 togglesort 函数, togglesort 表示切换字段的排序状态, 切换的顺序为 asc, desc, none. 此外, 还需要指定被切换的字段, 也就是跟随在 togglesort 后的第一个参数.
+
+ 另外, togglesort 函数将从服务器端重新获取数据, 所以不需要再调用 fill 函数.
+
+=== 对多个字段排序 ===
+ 默认情况下, 当点击一个不同的字段时, 之前排序的字段的排序状态会消失. 如果希望按照多个字段来排序, 则可以在点击字段时按住 Ctrl 建.
+
+=== 在服务器端排序 ===
+ 服务器端的方法可以接收到一个名为 __order 的参数, 其中包含了有关排序的信息:
+{{{
+public void ProcessRequest ( HttpContext context )
+{
+	context.Response.ContentType = "text/javascript";
+	context.Response.Cache.SetNoStore ( );
+
+	int pageindex = 1;
+	int pagesize = 3;
+
+	if ( null != context.Request["pageindex"] )
+		int.TryParse ( context.Request["pageindex"], out pageindex );
+
+	if ( null != context.Request["pagesize"] )
+		int.TryParse ( context.Request["pagesize"], out pagesize );
+
+	int beginIndex = pagesize * ( pageindex - 1 ) + 1;
+	int endIndex = pagesize * pageindex;
+
+	string order = context.Request["__order"];
+	// "realname asc, age desc"
+
+	// 返回 JSON 的代码
+}
+}}}
+ 上面的代码中, 使用了一般处理程序来返回 JSON 数据, 通过 Request 对象获取了 __order 参数. 关于如何返回 JSON, 请参考 [AjaxReturnJSON 在不同的 .NET 版本中返回 JSON].
+
+=== 显示排序状态 ===
+ 除了排序, 一般还要显示字段的排序状态, 比如用上箭头表示升序:
+{{{
+<je:Repeater ID="personList" runat="server"
+Selector="#list" IsVariable="true"
+PageSize="3" FillAsync-Url="person.ashx">
+<HeaderTemplate>
+	<thead je-class="{header}">
+		<tr>
+
+			<td je-onclick="togglesort,'realname'">
+				姓名
+<span je-class="{sort,realname,,asc-arrow icon,desc-arrow icon}">
+</span>
+			</td>
+
+		</tr>
+	</thead>
+</HeaderTemplate>
+</je:Repeater>
+}}}
+ 可以使用 je-class 来根据排序状态显示不同的样式, 语法为: *`{sort,<排序字段>[,<无排序样式>[,<升序样式>[,<降序样式>]]]}`*.
+
+=== 相关内容 ===
+ [JQueryElementRepeaterDoc Repeater 完全参考]
+
+ [AjaxReturnJSON 在不同的 .NET 版本中返回 JSON]
+
+ [JEBase JQueryElement 基本属性参考]
+
+=== 修订历史 ===
+ 2011-12-5: 修改下载的链接.
+
+</font>

@@ -1,0 +1,60 @@
+﻿#summary JQueryElement Reference&Sample
+#labels Phase-Implementation
+<font face="Segoe UI, Verdana, Tahoma, Arial, sans-serif">
+
+=== Introduction ===
+ JQueryElement is a jQuery UI controls you can use in Visual Studio, implement the jQuery UI effects and plugins. 
+
+=== Use ===
+ Please *download JQueryElement* at the section JQueryElement.dll Download of [Download Downloads].
+
+=== Sample ===
+ * [JQueryElementRepeaterDoc Repeater Reference]
+   * [JERepeaterBindField Repeater Binding/Handling Field]
+   * [JERepeaterSubView Repeater Child Views]
+   * [JERepeaterGroup Repeater Grouping Data]
+   * [JERepeaterWidget Repeater Handling Control]
+   * [JERepeaterShowTip Repeater Message]
+   * [JERepeaterSearch Repeater Retrieving Data]
+   * [JERepeaterSorting Repeater Sorting]
+   * [JERepeaterMulti Repeater Multi Rows]
+ * [JQueryElementTimerDoc Timer Reference]
+ * [JQueryElementValidatorDoc Validator Reference]
+ * [JQueryElementUploaderDoc Uploader Reference]
+
+ * [JQueryElementPlotDoc Plot Reference]
+   * [JEPlotAxisGrid Plot Axis And Grid]
+   * [JEPlotDateAxis Plot Date Axis]
+   * [JEPlotTitleLegendSeries Plot Title Legend And Series]
+   * [JEPlotCursor Plot Cursor Location And Zoom Chart]
+   * [JEPlotHighlighter Plot Highlight Data]
+
+ * [JQueryElementAccordionDoc Accordion Reference]
+ * [JQueryElementAutoCompleteDoc Autocompelete Reference]
+ * [JQueryElementButtonDoc Button Reference]
+ * [JQueryElementDatePickerDoc DatePicker Reference]
+ * [JQueryElementDialogDoc Dialog Reference]
+ * [JQueryElementProgressBarDoc ProgressBar Reference]
+ * [JQueryElementSliderDoc Slider Reference]
+ * [JQueryElementTabsDoc Tabs Reference]
+
+ * [JQueryElementDraggableDoc Draggable Reference]
+ * [JQueryElementDroppableDoc Droppable Reference]
+ * [JQueryElementResizableDoc Resizable Reference]
+ * [JQueryElementSelectableDoc Selectable Reference]
+ * [JQueryElementSortableDoc Sortable Reference]
+
+=== Other ===
+ * [AjaxReturnJSON Return JSON In Different .NET Version]
+ * [AjaxDataType Ajax And Server Data Type Conversions]
+ * [JEBase JQueryElement Basic Property Reference]
+ * [JEParameter Through Parameter Object Add Ajax Request Parameter]
+ * [AjaxManager Generate javascript That Calls The Server-Side Method]
+ * [JEMasterPage Use JQueryElement In Master Page]
+ * [ResponseProgress Display Page Loading Progress]
+ * [ResourceLoader Automatically Add Scripts And Styles]
+ * [JEIntelliSense Configuring Visual Studio IntelliSense For JQueryElement]
+
+=== Related Content ===
+ * [HowToDownloadAndUse How To Download]
+</font>

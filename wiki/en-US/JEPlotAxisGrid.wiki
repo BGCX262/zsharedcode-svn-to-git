@@ -1,0 +1,247 @@
+﻿#summary Plot Axis And Grid
+<font face="Segoe UI, Verdana, Tahoma, Arial, sans-serif">
+=== Introduction/Catalog ===
+ Please *download the sample code* at the section JQueryElement Demo Download of [Download Downloads], the directory is /plot/Default.aspx.
+ 
+ Video demo: [http://www.tudou.com/programs/view/HZC250BM_TE/ www.tudou.com/programs/view/HZC250BM_TE/]
+
+ This article will explain in detail how to set the axis and grid of the Plot control, the catalog is as follows:
+
+  * Prepare
+  * Axis
+    * Title
+    * Tick
+    * Pad
+    * Border
+    * X2, Y2
+    * Default Setting
+  * Grid
+    * Style
+    * Shadow
+  * Date Axis
+  * <font color="red">(Here are no completed chapters)</font>
+
+=== Prepare ===
+ Please view the Prepare section at [JQueryElementPlotDoc Plot Reference].
+
+=== Axis ===
+
+ ==== <font color="green">Title</font> ====
+ You can set the title of axis by the Title property:
+{{{
+<je:Plot ID="plot1" runat="server" IsVariable="true" Width="500px">
+	<AxesSetting>
+		<XAxisSetting
+			Label='<span style="font-size: xx-large">x</span>'>
+		</XAxisSetting>
+	</AxesSetting>
+	<DataSetting>
+		<je:Data>
+			<je:Point Param1="10" Param2="1" />
+			<je:Point Param1="11" Param2="10" />
+			<je:Point Param1="13" Param2="22" />
+			<je:Point Param1="20" Param2="30" />
+		</je:Data>
+	</DataSetting>
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/Plot%20Axis1.jpg" />
+
+ If you want to display the html code as text, you need to set up EscapeHtml property to true:
+{{{
+<je:Plot ID="plot2" runat="server" IsVariable="true" Data="[[[1,1],[2,2]]]" Width="500px">
+	<AxesSetting
+		YAxisSetting-Label='<b>y</b>'
+		YAxisSetting-LabelRendererSetting-EscapeHtml="true">
+	</AxesSetting>
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/Plot%20Axis2.jpg" />
+
+ ==== <font color="green">Tick</font> ====
+ You can set the distance between tick by NumberTicks and TickInterval property:
+{{{
+<je:Plot ID="plot3" runat="server" IsVariable="true"
+	Data="[[[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7]]]">
+	<AxesSetting>
+		<XAxisSetting NumberTicks="4" TickInterval="3">
+		</XAxisSetting>
+	</AxesSetting>
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/plotaxis3.jpg" />
+
+ And you can set the location which will display the tick by Ticks property:
+{{{
+<je:Plot ID="plot8" runat="server" IsVariable="true"
+	Data="[[[0,1],[2,5],[3,7]]]">
+	<AxesSetting>
+		<XAxisSetting Ticks="[0,1,3,5,10]">
+		</XAxisSetting>
+	</AxesSetting>
+</je:Plot>
+}}}
+ In the code above, it will display the ticks at 0, 1, 3, 5, 10.
+
+ <img src="http://zsharedcode.googlecode.com/files/plotaxis8.jpg" />
+
+ You can also set the color and text formatting of tick:
+{{{
+<je:Plot ID="plot11" runat="server" IsVariable="true"
+	Data="[[[100,1],[200,101],[20,50]]]">
+	<AxesSetting>
+		<XAxisSetting>
+			<TickRendererSetting TextColor="Red"
+				Prefix="-" FormatString="(%d)" />
+		</XAxisSetting>
+	</AxesSetting>
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/plotaxis11.jpg" />
+
+ By Min and Max you can set the minimum and maximum values of tick:
+{{{
+<je:Plot ID="plot6" runat="server" IsVariable="true"
+	Data="[[[2,5],[4,2],[3,7]]]">
+	<AxesSetting>
+		<XAxisSetting Min="0" Max="10">
+		</XAxisSetting>
+	</AxesSetting>
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/plotaxis6.jpg" />
+
+ In addition, you can also set the style and length of the tick:
+{{{
+<je:Plot ID="plot10" runat="server" IsVariable="true"
+	Data="[[[-1,1],[2,10],[20,50]]]">
+	<AxesSetting>
+		<XAxisSetting>
+			<TickRendererSetting Mark="outside" MarkSize="20" />
+		</XAxisSetting>
+	</AxesSetting>
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/plotaxis10.jpg" />
+
+ ==== <font color="green">Pad</font> ====
+ Via Pad, PadMax and PadMin, you can set the percentage of pad:
+{{{
+<je:Plot ID="plot4" runat="server" IsVariable="true"
+	Data="[[[2,1],[2,2],[3,7]]]">
+	<AxesSetting>
+		<XAxisSetting Pad="2">
+		</XAxisSetting>
+	</AxesSetting>
+</je:Plot>
+
+<je:Plot ID="plot5" runat="server" IsVariable="true"
+	Data="[[[2,1],[2,2],[3,7]]]">
+	<AxesSetting>
+		<XAxisSetting PadMax="2">
+		</XAxisSetting>
+	</AxesSetting>
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/plotaxis4.jpg" />
+
+ <img src="http://zsharedcode.googlecode.com/files/plotaxis5.jpg" />
+
+ ==== <font color="green">Border</font> ====
+ By BorderColor, and BorderWidth properties you can set the border style:
+{{{
+<je:Plot ID="plot9" runat="server" IsVariable="true"
+	Data="[[[-10,1],[20,10],[20,20]]]">
+	<AxesSetting
+		XAxisSetting-BorderColor="Blue"
+		XAxisSetting-BorderWidth="3">
+	</AxesSetting>
+</je:Plot>
+}}}
+
+ ==== <font color="green">X2, Y2</font> ====
+ In addition to the x and y axes, there are x2 and y2 axes in a chart:
+{{{
+<je:Plot ID="plot12" runat="server" IsVariable="true"
+	Data="[[[0,1],[2,4],[5,7]]]">
+	<AxesSetting
+		X2AxisSetting-BorderWidth="3"
+		X2AxisSetting-BorderColor="Blue">
+	</AxesSetting>
+</je:Plot>
+}}}
+ In the above code, we set the color and width of x2 axis.
+
+ <img src="http://zsharedcode.googlecode.com/files/plotaxis12.jpg" />
+
+ ==== <font color="green">Default Setting</font> ====
+ We can set the default value for x, y, x2 and y2 axes by AxesDefaultsSetting:
+{{{
+<je:Plot ID="plot13" runat="server" IsVariable="true"
+	Data="[[[0,1],[2,4],[5,7]]]">
+	<AxesDefaultsSetting
+		BorderColor="Red"
+		NumberTicks="3">
+	</AxesDefaultsSetting>
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/plotaxis13.jpg" />
+
+=== Grid ===
+
+ <img src="http://zsharedcode.googlecode.com/files/plotgrid1.jpg" />
+
+ ==== <font color="green">Style</font> ====
+ You can set the color and width of the line:
+{{{
+<je:Plot ID="plot2" runat="server" IsVariable="true"
+	Data="[[[0,0],[1,4],[2,4]]]">
+	<GridSetting
+		Background="DarkGray"
+		BorderColor="Red" BorderWidth="5"
+		GridLineColor="Blue" GridLineWidth="2" />
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/plotgrid3.jpg" />
+
+ ==== <font color="green">Shadow</font> ====
+ There are many properties on the shadow:
+{{{
+<je:Plot ID="plot3" runat="server" IsVariable="true"
+	Data="[[[1,10],[12,43],[22,4]]]">
+	<GridSetting
+		ShadowDepth="5" ShadowWidth="6"
+		ShadowAngle="60" ShadowOffset="2" />
+</je:Plot>
+}}}
+
+ <img src="http://zsharedcode.googlecode.com/files/plotgrid4.jpg" />
+
+=== Date Axis ===
+ In most cases, we use date, so we need to show the dates in jqplot, please refer to [JEPlotDateAxis Plot Date Axis].
+
+=== <font color="red">(Here are no completed chapters)</font> ===
+ More content, so stay tuned...
+
+=== Related Content ===
+ [JQueryElementPlotDoc Plot Reference]
+
+ [JEPlotDateAxis Plot Date Axis]
+
+ [JEBase JQueryElement Basic Property Reference]
+
+=== Revision History ===
+ 2012-1-16: Increase content on axis.
+
+ 2012-1-29: Increase link on the date axis.
+
+</font>

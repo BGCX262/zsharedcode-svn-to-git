@@ -1,0 +1,29 @@
+﻿#summary IEBrowser 页面跳转
+#labels Phase-Implementation
+<font face="microsoft yahei">
+<font size="1">[http://www.microsofttranslator.com/bv.aspx?from=&to=en&a=http://code.google.com/p/zsharedcode/wiki/IEBrowserDocNavigate Translate this page]</font>
+
+=== 代码 ===
+{{{
+// 需要引用 using zoyobar.shared.panzer.web.ib;
+
+// 从当前的 WebBrowser 控件创建 IEBrowser 对象.
+IEBrowser ie = new IEBrowser ( this.webBrowser );
+
+// 将 WebBrowser 导航到 http://www.google.com.hk/.
+ie.Navigate ( "http://www.google.com.hk/" );
+}}}
+
+=== 说明 ===
+ 页面跳转的代码是十分的简单的, 使用 [IEBrowser IEBrowser] 的 Navigate 方法即可.
+
+ _这里仅列出部分代码, 可能需要您自己创建窗口, 页面等._
+
+=== 使用 ===
+ 如果需要单独使用 [IEBrowser IEBrowser], 可以在 [Download 下载资源] 中的 IEBrowser.dll 下载一节下载 dll.
+
+ 如果下载整个 *panzer* 项目, 请参考 [HowToDownloadAndUse 如何下载使用].
+
+=== 需求 ===
+ 可能需要引用 System.Web 以及相关程序集.
+</font>

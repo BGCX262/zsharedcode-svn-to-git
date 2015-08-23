@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D365980-C848-4D4D-B642-B2E269472C50}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zoyobar.shared.panzer.test</RootNamespace>
+    <AssemblyName>zoyobar.shared.panzer.test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>zoyobar.shared.panzer.test.Test</StartupObject>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;V4</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MySite.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include=".ex\DataAdapter\TestDataAdapter.cs" />
+    <Compile Include=".ex\DataAdapter\TestDataAdapter.DbCommand.cs" />
+    <Compile Include=".ex\DataAdapter\TestDataAdapter.DbParameter.cs" />
+    <Compile Include=".ex\DataAdapter\TestDataAdapter.DataAdapter.cs" />
+    <Compile Include=".ex\DataSet\TestDataSet.cs" />
+    <Compile Include=".ex\DataSet\TestDataSet.ReadXml.cs" />
+    <Compile Include=".ex\DataSet\TestDataSet.RowState.cs" />
+    <Compile Include=".ex\DataSet\TestDataSet.DataRelation.cs" />
+    <Compile Include=".ex\EXTestHelper.cs" />
+    <Compile Include=".ex\Linq\TestLinq.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+    </Compile>
+    <Compile Include="TestCodingHelper.cs" />
+    <Compile Include="TestDataSetHelper.cs" />
+    <Compile Include="TestEMail.cs" />
+    <Compile Include="TestStringConvert.cs" />
+    <Compile Include="TestTracer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestStoreHelper.cs" />
+    <Compile Include="TestXmlNodeHelper.cs" />
+    <Compile Include="ui\dwc\FormStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\dwc\FormStudent.Designer.cs">
+      <DependentUpon>FormStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\dwc\StudentDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ui\dwc\TestDataWindowCore.cs" />
+    <Compile Include="ui\wc\FormStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\wc\FormStudent.Designer.cs">
+      <DependentUpon>FormStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\wc\TestWindowCore.cs" />
+    <Compile Include="web\FormHtmlEditHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\FormHtmlEditHelper.Designer.cs">
+      <DependentUpon>FormHtmlEditHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\HtmlEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="web\HtmlEditor.Designer.cs">
+      <DependentUpon>HtmlEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowser.Designer.cs">
+      <DependentUpon>FormIEBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowser2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowser2.Designer.cs">
+      <DependentUpon>FormIEBrowser2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowser3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowser3.Designer.cs">
+      <DependentUpon>FormIEBrowser3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowserDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowserDoc.Designer.cs">
+      <DependentUpon>FormIEBrowserDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\FormVCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\FormVCode.Designer.cs">
+      <DependentUpon>FormVCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\ieplus\FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\ieplus\FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\ieplus\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\ieplus\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\ieplus\FormPlus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\ieplus\FormPlus.Designer.cs">
+      <DependentUpon>FormPlus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\ieplus\FormRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\ieplus\FormRecord.Designer.cs">
+      <DependentUpon>FormRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\TestIEBrowser.cs" />
+    <Compile Include="web\ib\FormIEBrowserManaged.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowserManaged.Designer.cs">
+      <DependentUpon>FormIEBrowserManaged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowser4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowser4.Designer.cs">
+      <DependentUpon>FormIEBrowser4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowserTemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowserTemp.Designer.cs">
+      <DependentUpon>FormIEBrowserTemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowser5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowser5.Designer.cs">
+      <DependentUpon>FormIEBrowser5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowserButtonClick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="web\ib\FormIEBrowserButtonClick.Designer.cs">
+      <DependentUpon>FormIEBrowserButtonClick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="web\TestHtmlEditHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\panzer.csproj">
+      <Project>{DC26F99B-3DDE-4B5A-B6BB-A9A73C648444}</Project>
+      <Name>panzer %28panzer\panzer%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="web\ib\ButtonClick.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\jquery-1.5.2.min.js" />
+    <Content Include="MySite.ico" />
+    <Content Include="seriation.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="test.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="web\html.editor.htm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="app.config" />
+    <None Include="web\ib\jquery-1.5.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2008 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.9.2">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition SP2 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="test.zip" />
+    <None Include="ui\dwc\StudentDS.xsc">
+      <DependentUpon>StudentDS.xsd</DependentUpon>
+    </None>
+    <None Include="ui\dwc\StudentDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ui\dwc\StudentDS.xss">
+      <DependentUpon>StudentDS.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".ex\.xsd\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\dwc\FormStudent.resx">
+      <DependentUpon>FormStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\wc\FormStudent.resx">
+      <DependentUpon>FormStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\FormHtmlEditHelper.resx">
+      <DependentUpon>FormHtmlEditHelper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\HtmlEditor.resx">
+      <DependentUpon>HtmlEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\FormIEBrowser.resx">
+      <DependentUpon>FormIEBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\FormIEBrowser2.resx">
+      <DependentUpon>FormIEBrowser2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\FormIEBrowser3.resx">
+      <DependentUpon>FormIEBrowser3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\FormIEBrowserDoc.resx">
+      <DependentUpon>FormIEBrowserDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\FormVCode.resx">
+      <DependentUpon>FormVCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\FormIEBrowserManaged.resx">
+      <DependentUpon>FormIEBrowserManaged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\FormIEBrowser4.resx">
+      <DependentUpon>FormIEBrowser4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\FormIEBrowserTemp.resx">
+      <DependentUpon>FormIEBrowserTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\FormIEBrowser5.resx">
+      <DependentUpon>FormIEBrowser5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\ieplus\FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\ieplus\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\ieplus\FormPlus.resx">
+      <DependentUpon>FormPlus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\FormIEBrowserButtonClick.resx">
+      <DependentUpon>FormIEBrowserButtonClick.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="web\ib\ieplus\FormRecord.resx">
+      <DependentUpon>FormRecord.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

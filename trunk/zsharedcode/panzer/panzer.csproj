@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC26F99B-3DDE-4B5A-B6BB-A9A73C648444}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zoyobar.shared.panzer</RootNamespace>
+    <AssemblyName>zoyobar.shared.panzer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NOPARAM V4 HANS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\zoyobar.shared.panzer.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\zoyobar.shared.panzer.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include=".class\code\CodingHelper.cs" />
+    <Compile Include=".class\code\StringConvert.cs" />
+    <Compile Include=".class\data\DataSetHelper.cs" />
+    <Compile Include=".class\debug\Tracer.cs" />
+    <Compile Include=".class\flow\Flow.cs" />
+    <Compile Include=".class\io\StoreHelper.cs" />
+    <Compile Include=".class\ui\dweb\DataWebCore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include=".class\ui\dwindow\DataWindowCore.cs" />
+    <Compile Include=".class\ui\jqueryui\Button.cs" />
+    <Compile Include=".class\ui\jqueryui\Draggable.cs" />
+    <Compile Include=".class\ui\jqueryui\Droppable.cs" />
+    <Compile Include=".class\ui\jqueryui\JQueryElement.cs" />
+    <Compile Include=".class\ui\jqueryui\JQueryInteraction.cs" />
+    <Compile Include=".class\ui\jqueryui\JQueryPlusin.cs" />
+    <Compile Include=".class\ui\jqueryui\JQueryWidget.cs" />
+    <Compile Include=".class\ui\jqueryui\Repeater.cs" />
+    <Compile Include=".class\ui\jqueryui\Resizable.cs" />
+    <Compile Include=".class\ui\jqueryui\ScriptPackage.cs" />
+    <Compile Include=".class\ui\jqueryui\Selectable.cs" />
+    <Compile Include=".class\ui\jqueryui\Sortable.cs" />
+    <Compile Include=".class\ui\jqueryui\JQueryCoder.cs" />
+    <Compile Include=".class\ui\jqueryui\JQueryScript.cs" />
+    <Compile Include=".class\ui\jqueryui\Tabs.cs" />
+    <Compile Include=".class\ui\jqueryui\Progressbar.cs" />
+    <Compile Include=".class\ui\jqueryui\Dialog.cs" />
+    <Compile Include=".class\ui\jqueryui\Slider.cs" />
+    <Compile Include=".class\ui\jqueryui\Accordion.cs" />
+    <Compile Include=".class\ui\jqueryui\Datepicker.cs" />
+    <Compile Include=".class\ui\jqueryui\Autocomplete.cs" />
+    <Compile Include=".class\ui\jqueryui\Timer.cs" />
+    <Compile Include=".class\ui\jqueryui\Uploader.cs" />
+    <Compile Include=".class\ui\jqueryui\Validator.cs" />
+    <Compile Include=".class\ui\jqueryui\AjaxManager.cs" />
+    <Compile Include=".class\ui\jqueryui\jqplot\Plot.cs" />
+    <Compile Include=".class\ui\UILoader.cs" />
+    <Compile Include=".class\ui\WindowCore.cs" />
+    <Compile Include=".class\web\EMail.cs" />
+    <Compile Include=".class\web\HtmlEditHelper.cs" />
+    <Compile Include=".class\web\ib\ElementMark.cs" />
+    <Compile Include=".class\web\ib\WebPageAction.cs" />
+    <Compile Include=".class\web\ib\WebPageCondition.cs" />
+    <Compile Include=".class\web\ib\WebPageState.cs" />
+    <Compile Include=".class\web\ib\RecordAction.cs" />
+    <Compile Include=".class\web\JQuery.cs" />
+    <Compile Include=".class\web\ib\IEBrowser.cs" />
+    <Compile Include=".class\web\jqueryui\AccordionSetting.cs" />
+    <Compile Include=".class\web\jqueryui\AutocompleteSetting.cs" />
+    <Compile Include=".class\web\jqueryui\ButtonSetting.cs" />
+    <Compile Include=".class\web\jqueryui\DatepickerSetting.cs" />
+    <Compile Include=".class\web\jqueryui\DialogSetting.cs" />
+    <Compile Include=".class\web\jqueryui\InteractionSetting.cs" />
+    <Compile Include=".class\web\jqueryui\jqplot\PlotSetting.cs" />
+    <Compile Include=".class\web\jqueryui\UploaderSetting.cs" />
+    <Compile Include=".class\web\jqueryui\ValidatorSetting.cs" />
+    <Compile Include=".class\web\ResponseProgress.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include=".class\web\jqueryui\JQueryRazor.cs" />
+    <Compile Include=".class\web\jqueryui\JQueryUI.cs" />
+    <Compile Include=".class\web\jqueryui\DraggableSetting.cs" />
+    <Compile Include=".class\web\jqueryui\Option.cs" />
+    <Compile Include=".class\web\jqueryui\ExpressionHelper.cs" />
+    <Compile Include=".class\web\jqueryui\DroppableSetting.cs" />
+    <Compile Include=".class\web\jqueryui\PlusinSetting.cs" />
+    <Compile Include=".class\web\jqueryui\ProgressbarSetting.cs" />
+    <Compile Include=".class\web\jqueryui\RepeaterSetting.cs" />
+    <Compile Include=".class\web\jqueryui\SettingHelper.cs" />
+    <Compile Include=".class\web\jqueryui\SliderSetting.cs" />
+    <Compile Include=".class\web\jqueryui\SortableSetting.cs" />
+    <Compile Include=".class\web\jqueryui\SelectableSetting.cs" />
+    <Compile Include=".class\web\jqueryui\ResizableSetting.cs" />
+    <Compile Include=".class\web\jqueryui\Event.cs" />
+    <Compile Include=".class\web\jqueryui\AjaxSetting.cs" />
+    <Compile Include=".class\web\jqueryui\TabsSetting.cs" />
+    <Compile Include=".class\web\jqueryui\TimerSetting.cs" />
+    <Compile Include=".class\web\jqueryui\UISetting.cs" />
+    <Compile Include=".class\web\jqueryui\WidgetSetting.cs" />
+    <Compile Include=".class\web\jqueryui\Parameter.cs" />
+    <Compile Include=".class\web\JSON.cs" />
+    <Compile Include=".class\web\ScriptHelper.cs" />
+    <Compile Include=".class\web\ScriptHolder.cs" />
+    <Compile Include=".class\web\ASPXScriptHolder.cs" />
+    <None Include=".class\web\RazorScriptHolder.cs" />
+    <Compile Include=".class\web\ViewStateHelper.cs" />
+    <Compile Include=".class\xml\XmlDocumentHelper.cs" />
+    <Compile Include=".class\xml\XmlNodeHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include=".enum\FunctionType.cs" />
+    <Compile Include=".enum\CharacterType.cs" />
+    <Compile Include=".enum\StringCompareMode.cs" />
+    <Compile Include=".enum\web\ScriptBuildOption.cs" />
+    <Compile Include=".enum\web\ScriptType.cs" />
+    <Compile Include=".enum\web\NavigateOption.cs" />
+    <Compile Include=".enum\web\QuotationType.cs" />
+    <Compile Include=".enum\ValueKind.cs" />
+    <Compile Include=".enum\ValueStamp.cs" />
+    <Compile Include=".enum\DirectionType.cs" />
+    <Compile Include=".interface\ui\dweb\IDataWeb.cs" />
+    <Compile Include=".interface\ui\dwindow\IDataWindow.cs" />
+    <Compile Include=".interface\ui\IWindow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".class\Class.cd" />
+    <None Include=".interface\Interface.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="jquery.GPL-LICENSE.txt" />
+    <Content Include="jquery.MIT-LICENSE.txt" />
+    <Content Include="panzer.license.txt" />
+    <None Include="part\JQueryElement\Resources\repeater.min.js" />
+    <None Include="part\JQueryElement\Resources\timer.min.js" />
+    <None Include="part\JQueryElement\Resources\panzer.min.js" />
+    <None Include="part\JQueryElement\Resources\validator.min.js" />
+    <Content Include="read.me.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

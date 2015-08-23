@@ -1,0 +1,133 @@
+﻿#summary Through Parameter Object Add Ajax Request Parameter
+<font face="Segoe UI, Verdana, Tahoma, Arial, sans-serif">
+=== Introduction/Catalog ===
+ Please *download the sample code* at the section JQueryElement Demo Download of [Download Downloads].
+
+ This article describes the role and use of the Parameter object in JQueryElement:
+
+  * Prepare 
+  * Syntax 
+  * Parameter Name
+  * Way To Get Parameter Value
+  * Default Value
+  * Data Type
+  * Custom Conversion Methods
+  * Automatic Parameter
+  * Appendix: Async Property Reference
+
+===Prepare===
+ Until then, be sure to understand the use of control in the JQueryElement.
+
+=== Syntax ===
+ By adding a Parameter, to increase parameters for Ajax calling:
+{{{
+<je:Parameter
+	Name="<parameter name>" Type="<way to get parameter value>"
+	Value="<parameter expression>" Default="<default value>"
+	DataType="<data type>" Provider="<custom conversion methods>" />
+
+<je:Parameter Name="name" Type="Selector"
+	Value="#txtAName" DataType="String" />
+}}}
+ Each Parameter needs to be included in ParameterList, and ParameterList is the property of all the class Async, in the click event below, we add a parameter named name. 
+{{{
+<ClickAsync Url="webservice.asmx" MethodName="Save" Success="
+function(data){
+	alert(data.d.message);
+}
+">
+	<je:Parameter Name="name" Type="Selector" Value="#txtWName3" />
+</ClickAsync>
+}}}
+
+=== Parameter Name ===
+ If you use the WebService, the Name property of Parameter class and the parameter name of the method on the server side must be consistent, such as:
+{{{
+<je:Button ID="cmdWNet3" runat="server">
+	<ClickAsync Url="webservice.asmx" MethodName="Save">
+		<je:Parameter Name="name" Type="Selector" Value="#txtWName3" />
+	</ClickAsync>
+</je:Button>
+}}}
+ In the code, we set the Name property of Parameter to name, so the method Save need a parameter named name:
+{{{
+[WebMethod]
+[ScriptMethod]
+public SortedDictionary<string, object> Save ( string name )
+{ }
+}}}
+ If you use ashx to receive parameters, just use Request['name'].
+
+=== Way To Get Parameter Value ===
+ There are two ways to get parameter value, one is the Selector, which means that the Value property is a selector, use the selector to select an element on the page, usually the input element, take the value of this element as the value of the parameter, then there's the Expression, that Value is a javascript expression, take the value of javascript expression as the value of the parameter:
+{{{
+<je:Parameter Name="name" Type="Selector" Value="#txtWName3" />
+
+<je:Parameter Name="value" Type="Expression" Value="123 + 321" DataType="Number" />
+<je:Parameter Name="value" Type="Expression" Value="add(123, 321)" DataType="Number" />
+}}}
+ Selector #txtWName3 can also use single quotation marks, the difference can refer to the section JQueryElement Selector of [JEBase JQueryElement Basic Property Reference].
+
+ Value property as a javascript expression, the form is varied, in code, we also call a javascript method add.
+
+=== Default Value ===
+ By the Default property, you can set a default value when the parameter value is empty, is a javascript expression.
+
+=== Data Type ===
+ Through DataType to convert the type of parameter, such as convert strings in the text box to numeric type:
+{{{
+<je:Parameter Name="name" Type="Selector" Value="#txtAge" DataType="number" />
+}}}
+ Property DataType can be set to Number, Boolean, String, Date, in fact, the WebService itself will also do some transformation on the server side, and detail can refer to [AjaxDataType Ajax And Server Data Type Conversions].
+
+=== Custom Conversion Methods ===
+ If the DataType is set, you can set Provider that provides custom conversion method, the method will be called when normal conversions fail, such as:
+{{{
+<je:Parameter Name="name" Type="Selector" Value="#txtAge" DataType="number" Provider="
+function(value){
+	if(value == 'without doubt')
+		return 40;
+	else
+		return 18;
+}
+" />
+}}}
+ In the code above, if the user enters is without doubt, the age will translate to 40, otherwise 18.
+
+=== Automatic Parameter ===
+ Some events of the control will automatically add some parameters, such as the Repeater's FillAsync will add pageindex, pagesize to represent the page number and other information.
+
+=== Appendix: Async Property Reference ===
+ Url - The requested url, for example: `"http://www.???.com/???.asmx"`.
+
+ MethodName - The method name of WebService, if it is a generic handler you can ignore this property.
+
+ EventType - The type of event that triggers the request.
+
+ Form - A selector of the form, the data of the form will be sent to the server-side.
+
+ Data - Additional data that is passed, it is a javascript expression.
+
+ IsSingleQuote - Whether to use single quotation marks.
+
+ ClientFunction - The name of javascript method that be called.
+
+ AjaxManagerID - The ID of AjaxManager which contains the javascript method that is called.
+
+ Other property set can refer to [http://api.jquery.com/jQuery.ajax/ api.jquery.com/jQuery.ajax/].
+
+=== Related Content ===
+ [AjaxReturnJSON Return JSON In Different .NET Version]
+
+ [JEBase JQueryElement Basic Property Reference]
+
+ [AjaxDataType Ajax And Server Data Type Conversions]
+
+=== Revision History ===
+ 2011-12-5: Modify the link of download.
+
+ 2011-12-10: Increase the property reference of Async.
+
+ 2011-12-20: Modify introduction of Parameter.
+
+</font>

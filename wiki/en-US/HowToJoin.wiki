@@ -1,0 +1,18 @@
+﻿#summary How To Join
+#labels Phase-Implementation
+<font face="Segoe UI, Verdana, Tahoma, Arial, sans-serif">
+=== Conditions ===
+ As *panzer* was developed using C# as the language, therefore, if you wish to apply for a developer, you should master C#, and Visual Studio before then.
+
+=== Become A Developer ===
+ If you have a strong logical thinking and creative ability and encoding capabilities, you can become a *panzer* developers, develop new features, or maintain and improve existing function.
+
+=== Become A Tester ===
+ If you love *panzer* and hope that *panzer* to better, you can become a tester.
+
+=== Becoming A Documents Officer ===
+ Write wiki for *panzer*, provide support information for users.
+
+=== Application ===
+ Please send introduce and the role you want and googlecode username to m.s.cxc@qq.com, if there is no reply to you within 48 hours, please understand, possibly because there are too much work.
+</font>
